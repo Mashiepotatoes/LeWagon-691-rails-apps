@@ -1,0 +1,11 @@
+<h1>Grid Letters</h1>
+<p>
+  <%= @grid %>
+</p>
+
+<form action="/score" method="post">
+  <input type="text" name="answer" placeholder="Please input your word here">
+  <input type="submit">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag "grid", @grid %>
+</form>

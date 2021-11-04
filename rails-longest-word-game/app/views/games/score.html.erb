@@ -1,0 +1,12 @@
+<h1>This is the score page</h1>
+<p>Your score is:</p>
+
+<% if @valid_grid_word == false %>
+  <p>Sorry but <%= @user_input %> can't be build out of <%= params[:grid] %></p>
+<% end %>
+<% if @guess["found"] == true %>
+  <p>Congratulations <%= @user_input %> is a valid English word!</p>
+<% else %>
+  <p>Sorry but <%= @user_input %> is not a valid English word!</p>
+<% end %>
+<%= link_to "Start a new game", "/new" %>
